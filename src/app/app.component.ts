@@ -5,6 +5,16 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'myProjectaya';
+export class AppComponent 
+{
+  parentProp;
+  tryParentProp = "this is try parent prop"
+  title = 'myProject';
+  recieveData(data){
+    this.parentProp = data;
+    console.log(this.parentProp)
+  }
 }
+
+
+

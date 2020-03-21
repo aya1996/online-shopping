@@ -1,14 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-// import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import{MatToolbarModule}from '@angular/material'
-import {NgModule, Component} from '@angular/core';
-
-
+import {NgModule} from '@angular/core';
+import { CommonModule } from '@angular/common'; 
 import { HttpClientModule } from '@angular/common/http';
-import {A11yModule} from '@angular/cdk/a11y';
+import {ShoppingCartModule} from 'ng-shopping-cart';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {PortalModule} from '@angular/cdk/portal';
 import {ScrollingModule} from '@angular/cdk/scrolling';
@@ -48,13 +46,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {MDBBootstrapModule} from 'angular-bootstrap-md'
-import { from } from 'rxjs';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CartsComponent } from './carts/carts.component';
 import { FooterComponent } from './footer/footer.component';
 import {CarouselModule}from 'angular-bootstrap-md';
 import { HomeComponent } from './home/home.component';
-// import {AppRoutingModule} from './routing/app-route-module'
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { RouterModule, Routes }from "@angular/router";
@@ -67,6 +63,8 @@ import { IndexComponent } from './index/index.component';
 import { NavIndexComponent } from './nav-index/nav-index.component';
 import { CameraComponent } from './camera/camera.component';
 import { PhonesComponent } from './phones/phones.component';
+import { ServicenodeService } from './services/servicenode.service';
+import { UserService } from './services/user.service';
 
 
 
@@ -109,6 +107,8 @@ const routes:Routes =
     CameraComponent,
     PhonesComponent,
    
+ 
+    
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -118,6 +118,7 @@ const routes:Routes =
     MatSliderModule, 
     MatToolbarModule,
     BrowserModule,
+    ShoppingCartModule,
     // import HttpClientModule after BrowserModule.
     BrowserModule,
     // import HttpClientModule after BrowserModule.
@@ -165,13 +166,11 @@ const routes:Routes =
       PortalModule,
       ScrollingModule,
       MDBBootstrapModule,
-      // MdbCardBodyComponent
+      CommonModule,
       CarouselModule,
-      // CarouselComponent,
-      // MdbCardBodyComponent
-    // MdbNavbarModule
+     
    ],
-  providers: [],
+  providers: [ServicenodeService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

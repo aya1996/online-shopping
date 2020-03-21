@@ -9,7 +9,7 @@ export class UserService {
 
   readonly root_url;
   constructor(private http:HttpClient) {
-this.root_url="http://127.0.0.1:3000";
+this.root_url="http://127.0.0.1:3000/api";
    }
   /*
   inside the services make get method 

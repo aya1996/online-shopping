@@ -31,6 +31,7 @@
     "jquery": "^3.4.1",
     "mdbootstrap": "^4.13.0",
     "mongoose": "^5.8.11",
+    "ng-shopping-cart": "^1.0.0",
     "package.json": "^2.0.1",
     "pkg.json": "^2.0.7",
     "rxjs": "~6.4.0",

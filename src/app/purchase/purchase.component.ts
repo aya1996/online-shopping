@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ServicenodeService} from '../services/servicenode.service'
 
-import {HttpClient} from "@angular/common/http";
   
 @Component({
   selector: 'app-purchase',
@@ -11,13 +11,27 @@ export class PurchaseComponent implements OnInit  {
 
   
 
-  constructor() {}
+  products=[] ;
+constructor( private services:ServicenodeService) { }
 
+ngOnInit() {
  
-
-  ngOnInit() {
+ console.log("get the product")
+ this.services.cart().subscribe(res=>{
    
-    }
+       
+ for ( var i = 0 ;  i <res["length"]; i++)
+ {
+     this.products.push(res[i])
+ }
+
+
+
+ })
+
+ console.log(this.products)
+ 
+}
 
     
   }

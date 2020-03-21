@@ -17,6 +17,13 @@ addProduct(title:string,price:number,details:string,image:string)
 {
  return  this.services.post('postproduct',{title:title,price:price,details:details,image:image})
 }
+//checkout order
+checkout(name:string,email:string,address:string,city:string,state:string,zip:number)
+{
+  console.log("checkout")
+ return  this.services.post('checkoutModel',{name:name,email:email,address:address,city:city,state:state,zip:zip})
+
+}
 //to delete a product
 deleteProduct(title:string)
 {
@@ -26,13 +33,13 @@ deleteProduct(title:string)
 
 
 //the function to make order
-makeOrderTask(image:string)
+addTocart(name:string,price:number,img:string)
 {
 
-  console.log(image)
+ 
   console.log("make order")
-  
- return  this.services.post('makeOrder',{image:image})
+  console.log()
+ return  this.services.post('cartModel',{name:name,price:price,img:img})
 }
 //the function to get user 
 userLogin(username:string,passward:string)
@@ -42,10 +49,25 @@ userLogin(username:string,passward:string)
 }
 
 //the get all product function 
-product()
+laptop()
 {
- console.log("in pro func")
-  return this.services.get('getPro')
+  return this.services.get('laptopModel')
+}
+Camera()
+{
+  return this.services.get('cameraModel')
+}
+Headphone()
+{
+  return this.services.get('headphoneModel')
+}
+Phones()
+{
+  return this.services.get('phoneModel')
+}
+cart()
+{
+  return this.services.get('cartModel')
 }
 //the get all order function 
 getOrder()

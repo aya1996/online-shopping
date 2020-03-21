@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 //user module
-const Product = mongoose.model('Products', {
+const HeadPhones = mongoose.model('Headphones', {
     name: {
         type: String,
         required: true
@@ -17,6 +17,6 @@ const Product = mongoose.model('Products', {
     }
 });
 
-module.exports = Product;
+module.exports = HeadPhones;
 
 

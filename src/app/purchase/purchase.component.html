@@ -5,7 +5,7 @@
     <!--Table head-->
     <thead class="thead-light">
         <tr>
-            <th scope="col">#</th>
+           
             <th scope="col">Product Name</th>
             <th scope="col">Price</th>
             <th scope="col">Image</th>
@@ -17,22 +17,15 @@
 
     <!--Table body-->
     <tbody>
-        <tr >
-            <th scope="row">1</th>
-            <td>Camera</td>
-            <td>200$</td>
-            <td><img src="../../assets/coco/cam1.jpg"></td>          
+        <tr *ngFor="let product of products">
+         
+            <td>{{product.name}}</td>
+            <td>{{product.price}} $</td>
+            <td><img src={{product.img}}></td>          
            
             <td><button type="button" mdbBtn color="danger" mdbWavesEffect>Delete</button></td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Camera</td>
-            <td>200$</td>
-            <td><img src="../../assets/coco/cam1.jpg"></td>          
-           
-            <td><button type="button" mdbBtn color="danger" mdbWavesEffect>Delete</button></td>
-        </tr>
+
         <tr>
             <th>Total</th>
             <td colspan="4">400 $</td>

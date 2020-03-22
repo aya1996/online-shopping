@@ -25,5 +25,16 @@ route.get('/', (req, res, next) => {
             res.status(400).json(err);
         })
 });
+route.delete('/:id', (req, res, next) => {
+    const { id } = req.params;
+    dbProduct.findByIdAndRemove(id)
+        .then(deletedProduct => {
+            res.status(200).json(deletedProduct)
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        })
+})
+
 
 module.exports=route;

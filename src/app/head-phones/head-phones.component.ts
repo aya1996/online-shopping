@@ -34,7 +34,9 @@ addToBag(id:any){
 
   if(id==this.products[i]._id)
 this.services.addTocart(this.products[i].name,this.products[i].price,this.products[i].img).subscribe(res=>{
-})}
+})
+alert("This Item Added To Cart...")
+}
 
 
 }

@@ -16,19 +16,20 @@
     <!--Table head-->
 
     <!--Table body-->
-    <tbody>
+    <tbody >
         <tr *ngFor="let product of products">
          
             <td>{{product.name}}</td>
             <td>{{product.price}} $</td>
             <td><img src={{product.img}}></td>          
            
-            <td><button type="button" mdbBtn color="danger" mdbWavesEffect>Delete</button></td>
+            <td><button type="button" mdbBtn color="danger" (click)="deleteItem(product._id)" mdbWavesEffect>Delete</button></td>
         </tr>
 
         <tr>
+
             <th>Total</th>
-            <td colspan="4">400 $</td>
+            <td colspan="4">{{total}}  $</td>
         </tr>
         
     </tbody>

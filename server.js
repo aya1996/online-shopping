@@ -25,7 +25,17 @@ app.use('/api/headphoneModel',require('./api/headphones'));
 app.use(cors());
 app.use('/api/phoneModel',require('./api/phones'));
 app.use('/api/cartModel',require('./api/cart'));
+// app.use('/api/delProduct/:id',require('./api/cart'));
 app.use('/api/checkoutModel',require('./api/checkout'));
+
+app.use((req,res,next) => {
+    res.status(404).json({message: 'route not found'});
+});
+
+app.use((err, req, res, next)=>{
+    console.error(err);
+    res.status(500).json({ message: 'something went wrong' });
+});
 
 app.listen(port,hostname,()=>{
     console.log(`server running at http://${hostname}:${port}/`)

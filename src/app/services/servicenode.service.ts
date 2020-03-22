@@ -25,10 +25,10 @@ checkout(name:string,email:string,address:string,city:string,state:string,zip:nu
 
 }
 //to delete a product
-deleteProduct(title:string)
+deleteProduct(id:string)
 {
   console.log("task services task")
-  return  this.services.delete(`delProduct`,{title:title}) 
+  return  this.services.delete(`cartModel/${id}`,{id:id}) 
 }
 
 
@@ -38,7 +38,7 @@ addTocart(name:string,price:number,img:string)
 
  
   console.log("make order")
-  console.log()
+
  return  this.services.post('cartModel',{name:name,price:price,img:img})
 }
 //the function to get user 

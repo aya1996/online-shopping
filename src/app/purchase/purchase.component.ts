@@ -12,6 +12,7 @@ export class PurchaseComponent implements OnInit  {
   
 
   products=[] ;
+  total:number=0;
 constructor( private services:ServicenodeService) { }
 
 ngOnInit() {
@@ -20,11 +21,12 @@ ngOnInit() {
  this.services.cart().subscribe(res=>{
    
        
- for ( var i = 0 ;  i <res["length"]; i++)
+  for ( let i in res)
  {
      this.products.push(res[i])
  }
-
+ for ( let i in this.products)
+ this.total+=this.products[i].price;
 
 
  })
@@ -33,7 +35,14 @@ ngOnInit() {
  
 }
 
-    
+deleteItem(id:string){
+  alert("Are you sure ? you wont to delete ?");
+  for ( let i in this.products)
+
+  if(id==this.products[i]._id)
+this.services.deleteProduct(this.products[i]._id).subscribe(res=>{
+})}
+
   }
 
  

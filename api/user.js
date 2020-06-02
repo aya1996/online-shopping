@@ -16,4 +16,13 @@ route.post('/',async(req,res)=>{
     await userModel.save();
     res.json(userModel);
 })
+route.get('/', (req, res, next) => {
+    dbUser.find()
+        .then(user => {
+            res.status(200).json(user);
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        })
+});
 module.exports=route;

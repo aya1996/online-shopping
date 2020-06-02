@@ -7,13 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent 
 {
-  parentProp;
-  tryParentProp = "this is try parent prop"
-  title = 'myProject';
-  recieveData(data){
-    this.parentProp = data;
-    console.log(this.parentProp)
-  }
+ 
 }
 
 

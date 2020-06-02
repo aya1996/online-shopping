@@ -19,8 +19,8 @@ const User = mongoose.model('User', {
     },
     gender: {
         type: String,
-        default: 'N/A',
-        enum: ['M', 'F', 'N/A']
+        default: 'N/A'
+    
     },
     img: {
         type: String

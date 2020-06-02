@@ -1,16 +1,33 @@
 import { Injectable } from '@angular/core';
 import{UserService} from './user.service';
+interface myData {
+  success: boolean,
+  message: string
+}
+
+interface registerResponse {
+  success: boolean,
+  message: string
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicenodeService {
-
+  private loggedInStatus = false
   constructor(private services :UserService) { }
+  get isLoggedIn() {
+    return this.loggedInStatus
+  }
+
+  login() {
+    // post these details to API server return user info if correct
+    return this.services.get('userModel')
+  }
   //the function to make user register 
-createUser(username:string,passward:string,email:string,image:string)
+createUser(username:string ,email:string,age:number,passward:any,gender:string,image:any)
 {
- return  this.services.post('userreg',{username:username,passward:passward,email:email,image:image})
+ return  this.services.post('userModel',{username:username,email:email,age:age,passward:passward,gender:gender,image:image})
 }
 //the function to add product 
 addProduct(title:string,price:number,details:string,image:string)

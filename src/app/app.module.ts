@@ -65,6 +65,8 @@ import { CameraComponent } from './camera/camera.component';
 import { PhonesComponent } from './phones/phones.component';
 import { ServicenodeService } from './services/servicenode.service';
 import { UserService } from './services/user.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 
 
@@ -81,11 +83,13 @@ const routes:Routes =
    {  path:'carts',  component : CartsComponent },
    {  path:'signup',  component : SignupComponent},
    {  path:'login',  component : LoginAndRegisterComponent},
+   {  path:'index',  component : IndexComponent},
+   {  path:'dashboard',  component : DashboardComponent},
   // {component:UserComponent,path:'users/:id'},
   // {path:'',redirectTo:'users',pathMatch:'full'},
   { path:'head', component: HeadPhonesComponent },
   // { path:'**', component : PurchaseComponent}
-  {  path:'**',  component : HomeComponent  },
+  {  path:'**',  component : IndexComponent},
 ]
 
 
@@ -106,6 +110,8 @@ const routes:Routes =
     NavIndexComponent,
     CameraComponent,
     PhonesComponent,
+    DashboardComponent,
+   
    
  
     
